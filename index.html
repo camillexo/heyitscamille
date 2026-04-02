@@ -21,11 +21,11 @@
   --highlight:   #EFECE7;
   --touch:       44px;
 }
-
+ 
 *, *::before, *::after { margin: 0; padding: 0; box-sizing: border-box; }
-
+ 
 html { scroll-behavior: smooth; -webkit-text-size-adjust: 100%; }
-
+ 
 body {
   background: var(--cream);
   color: var(--ink);
@@ -35,7 +35,7 @@ body {
   line-height: 1.6;
   overflow-x: hidden;
 }
-
+ 
 /* noise grain */
 body::before {
   content: '';
@@ -46,7 +46,7 @@ body::before {
   z-index: 999;
   opacity: 0.5;
 }
-
+ 
 /* ═══════════════════════════════════════════
    HERO
 ═══════════════════════════════════════════ */
@@ -128,7 +128,7 @@ body::before {
   0%, 100% { transform: translateX(-50%) translateY(0); }
   50%       { transform: translateX(-50%) translateY(7px); }
 }
-
+ 
 /* ═══════════════════════════════════════════
    TICKER
 ═══════════════════════════════════════════ */
@@ -154,7 +154,7 @@ body::before {
   0%   { transform: translateX(0); }
   100% { transform: translateX(-50%); }
 }
-
+ 
 /* ═══════════════════════════════════════════
    SECTION SCAFFOLD
 ═══════════════════════════════════════════ */
@@ -185,7 +185,7 @@ body::before {
   height: 1px;
   background: linear-gradient(to right, transparent, var(--blush), transparent);
 }
-
+ 
 /* ═══════════════════════════════════════════
    PHOTO GALLERY
 ═══════════════════════════════════════════ */
@@ -292,7 +292,7 @@ body::before {
   font-weight: 300;
   line-height: 1.75;
 }
-
+ 
 /* ═══════════════════════════════════════════
    INTERACTIVE BANNER
 ═══════════════════════════════════════════ */
@@ -362,7 +362,7 @@ body::before {
 }
 .ib-step.active { color: var(--highlight); border-color: #664d00; background: #2a2200; }
 .ib-step.done   { color: var(--sage);      border-color: #2d5230; background: #0f1f11; }
-
+ 
 /* ═══════════════════════════════════════════
    DARK STRIPE (values / verdict)
 ═══════════════════════════════════════════ */
@@ -372,7 +372,7 @@ body::before {
 }
 .stripe .section-label { color: var(--blush); }
 .stripe .section-label::after { background: #2A2A2A; }
-
+ 
 /* ═══════════════════════════════════════════
    VALUES
 ═══════════════════════════════════════════ */
@@ -396,7 +396,7 @@ body::before {
   transition: color 0.25s;
 }
 .val-count-num.full { color: var(--sage); }
-
+ 
 .values-grid {
   display: grid;
   grid-template-columns: 1fr;
@@ -419,7 +419,7 @@ body::before {
 .value-item:active:not(.locked) { border-color: #3d3d3d; }
 .value-item.checked  { border-color: var(--sage); background: rgba(122,158,126,0.12); }
 .value-item.locked   { opacity: 0.28; cursor: not-allowed; pointer-events: none; }
-
+ 
 .val-box {
   width: 20px; height: 20px;
   flex-shrink: 0;
@@ -431,14 +431,14 @@ body::before {
   transition: all 0.15s;
 }
 .value-item.checked .val-box { background: var(--sage); border-color: var(--sage); }
-
+ 
 .val-text { font-size: 0.88rem; line-height: 1.35; color: #C5C5C5; }
 .val-text strong { color: #E8E8E8; font-weight: 400; }
 .val-text .val-gt  { color: var(--terracotta); margin: 0 0.3em; font-style: normal; }
 .val-text .val-b   { color: #555; font-size: 0.82rem; }
 .value-item.checked .val-text { color: #DDD; }
 .value-item.checked .val-text strong { color: #FFF; }
-
+ 
 .match-meter {
   margin-top: 1.75rem;
   padding: 1.1rem 1.25rem;
@@ -468,14 +468,14 @@ body::before {
   white-space: nowrap;
 }
 .meter-label span { color: var(--highlight); font-weight: 700; }
-
+ 
 /* ═══════════════════════════════════════════
    PICK OUR DAY
 ═══════════════════════════════════════════ */
 .day-section { background: var(--paper); }
 .day-section .section-label { color: var(--terracotta); }
 .day-section .section-label::after { background: var(--blush); }
-
+ 
 .day-intro {
   font-size: 0.95rem;
   color: var(--warm-grey);
@@ -542,14 +542,14 @@ body::before {
   display: none;
 }
 .day-after.show { display: block; }
-
+ 
 /* ═══════════════════════════════════════════
    MUSIC
 ═══════════════════════════════════════════ */
 .music-section { background: #111; }
 .music-section .section-label { color: #444; }
 .music-section .section-label::after { background: #222; }
-
+ 
 .music-headline {
   font-family: 'Playfair Display', serif;
   font-size: clamp(1.7rem, 6vw, 2.8rem);
@@ -572,20 +572,20 @@ body::before {
   text-decoration: none;
   border-bottom: 1px solid #1DB95440;
 }
-
+ 
 /* embed always on top on mobile, tracks below */
 .spotify-embed-wrap {
   margin-bottom: 1.5rem;
 }
 .spotify-embed-wrap iframe { border-radius: 12px; width: 100%; }
-
+ 
 .ssb { margin-top: 1.25rem; padding: 1.1rem 1.15rem; border: 1px solid #222; border-radius: 10px; }
 .ssb-label { font-family: 'Space Mono', monospace; font-size: 0.6rem; letter-spacing: 0.12em; text-transform: uppercase; color: #444; margin-bottom: 0.75rem; }
 .ssb-track { height: 3px; background: #1A1A1A; border-radius: 100px; position: relative; overflow: hidden; }
 .ssb-fill { position: absolute; left:0; top:0; height:100%; background: linear-gradient(to right, #1DB954, var(--highlight)); border-radius: 100px; width:0%; transition: width 0.5s cubic-bezier(0.34,1.56,0.64,1); }
 .ssb-nums { display: flex; justify-content: space-between; margin-top: 0.55rem; font-family: 'Space Mono', monospace; font-size: 0.58rem; color: #3A3A3A; }
 .ssb-nums strong { color: #1DB954; font-weight: 400; }
-
+ 
 .track-row {
   display: grid;
   grid-template-columns: 26px 1fr;
@@ -622,14 +622,14 @@ body::before {
   letter-spacing: 0.04em;
   text-transform: uppercase;
 }
-
+ 
 /* ═══════════════════════════════════════════
    TRIVIA
 ═══════════════════════════════════════════ */
 .trivia-section { background: var(--cream); }
 .trivia-section .section-label { color: var(--terracotta); }
 .trivia-section .section-label::after { background: var(--blush); }
-
+ 
 .trivia-intro {
   font-size: 0.95rem;
   color: var(--warm-grey);
@@ -640,7 +640,7 @@ body::before {
 .tp-dot { height: 3px; flex: 1; background: #DDD; border-radius: 2px; transition: background 0.3s; }
 .tp-dot.done   { background: var(--terracotta); }
 .tp-dot.active { background: var(--ink); }
-
+ 
 .trivia-card {
   border: 1px solid #E8DDD0;
   background: var(--paper);
@@ -686,7 +686,7 @@ body::before {
 .opt-btn.correct        { background: #DCE8D8; border-color: var(--sage); color: var(--forest); }
 .opt-btn.wrong          { background: #FDECEA; border-color: #D96B5B; color: #7A1F12; }
 .opt-btn.reveal-correct { background: #DCE8D8; border-color: var(--sage); color: var(--forest); }
-
+ 
 .trivia-feedback {
   margin-top: 1.25rem;
   padding: 0.9rem 1rem;
@@ -714,14 +714,14 @@ body::before {
 }
 .next-btn:hover, .next-btn:active { background: transparent; color: var(--ink); }
 .t-score-note { font-family: 'Space Mono', monospace; font-size: 0.62rem; color: var(--warm-grey); }
-
+ 
 /* ═══════════════════════════════════════════
    VERDICT
 ═══════════════════════════════════════════ */
 .verdict-section { background: var(--ink); color: var(--cream); }
 .verdict-section .section-label { color: var(--blush); }
 .verdict-section .section-label::after { background: #2A2A2A; }
-
+ 
 .not-ready { padding: 2rem 0; }
 .nr-text { font-family: 'Space Mono', monospace; font-size: 0.65rem; color: #444; letter-spacing: 0.1em; text-transform: uppercase; margin-bottom: 1.1rem; }
 .chips { display: flex; gap: 0.6rem; flex-wrap: wrap; }
@@ -738,7 +738,7 @@ body::before {
   display: flex; align-items: center;
 }
 .chip.done { border-color: var(--sage); color: var(--sage); background: rgba(122,158,126,0.08); }
-
+ 
 .result-gate { display: none; }
 .result-gate.show { display: block; }
 .r-eyebrow {
@@ -771,7 +771,7 @@ body::before {
 }
 .r-day-callout.show { display: block; }
 .r-day-callout strong { color: #DDD; font-weight: 400; }
-
+ 
 .r-scores {
   display: flex; gap: 2rem;
   flex-wrap: wrap;
@@ -792,7 +792,7 @@ body::before {
 }
 .r-cta { font-size: 0.88rem; color: #555; line-height: 1.75; }
 .r-cta a { color: var(--blush); text-decoration: none; border-bottom: 1px solid #5A3A3A; }
-
+ 
 /* ═══════════════════════════════════════════
    FOOTER
 ═══════════════════════════════════════════ */
@@ -826,13 +826,13 @@ footer {
 }
 .footer-link:hover { border-color: var(--blush); color: var(--blush); }
 .footer-fine { font-size: 0.72rem; color: #3A3A3A; font-style: italic; }
-
+ 
 /* ═══════════════════════════════════════════
    SCROLL ANIMATION
 ═══════════════════════════════════════════ */
 .fade-up { opacity: 0; transform: translateY(22px); transition: opacity 0.65s ease, transform 0.65s ease; }
 .fade-up.visible { opacity: 1; transform: none; }
-
+ 
 /* ═══════════════════════════════════════════
    TABLET +  (≥ 600px)
 ═══════════════════════════════════════════ */
@@ -845,7 +845,7 @@ footer {
   .trivia-options { grid-template-columns: 1fr 1fr; }
   .gallery-slide { min-width: 33.333%; aspect-ratio: 3/4; }
 }
-
+ 
 /* ═══════════════════════════════════════════
    DESKTOP + (≥ 860px)
 ═══════════════════════════════════════════ */
@@ -858,7 +858,7 @@ footer {
 </style>
 </head>
 <body>
-
+ 
 <!-- HERO -->
 <section class="hero">
   <div class="hero-tag">est. 1997 · Nassau, Bahamas</div>
@@ -884,14 +884,14 @@ footer {
   </div>
   <div class="scroll-hint">↓ scroll to learn more</div>
 </section>
-
+ 
 <!-- TICKER -->
 <div class="ticker-wrap">
   <div class="ticker">
-    <span>God first! 🙏🏾</span><span>just a "little" competitive 🏆</span><span>truffle those fries, ASAP! 🍟</span><span>big brain, big yapper 🗣️</span><span>early riser 🌅</span><span>witty banter 😉</span>><span>lowkey homebody 🛋️</span><span>deep belly laughs😂</span><span>God first! 🙏🏾</span><span>just a "little" competitive 🏆</span><span>truffle those fries, ASAP! 🍟</span><span>big brain, big yapper 🗣️</span><span>early riser 🌅</span><span>witty banter 😉</span>><span>lowkey homebody 🛋️</span><span>deep belly laughs😂</span>
+    <span>God first! 🙏🏾</span><span>just a "little" competitive 🏆</span><span>truffle those fries, ASAP! 🍟</span><span>big brain, big yapper 🗣️</span><span>early riser 🌅</span><span>witty banter 😉</span><span>lowkey homebody 🛋️</span><span>deep belly laughs😂</span><span>God first! 🙏🏾</span><span>just a "little" competitive 🏆</span><span>truffle those fries, ASAP! 🍟</span><span>big brain, big yapper 🗣️</span><span>early riser 🌅</span><span>witty banter 😉</span><span>lowkey homebody 🛋️</span><span>deep belly laughs😂</span>
   </div>
 </div>
-
+ 
 <!-- ABOUT ME -->
 <section class="section fade-up">
   <div class="section-label">01 — About Me</div>
@@ -909,7 +909,7 @@ footer {
     <button class="gallery-btn next" id="galleryNext" aria-label="Next photo">→</button>
     <div class="gallery-dots" id="galleryDots"></div>
   </div>
-
+ 
  <div class="about-grid">
     <div class="about-card wide">
       <div class="card-prompt">The short version</div>
@@ -937,9 +937,9 @@ footer {
     </div>
   </div>
 </section>
-
+ 
 <div class="divider"></div>
-
+ 
 <!-- INTERACTIVE BANNER -->
 <div class="interactive-banner fade-up">
   <div class="ib-kicker">now the fun part</div>
@@ -952,7 +952,7 @@ footer {
     <span class="ib-step" id="ibStep4">? how well do you get me</span>
   </div>
 </div>
-
+ 
 <!-- VALUES -->
 <section class="stripe fade-up">
   <div class="section">
@@ -968,7 +968,7 @@ footer {
     </div>
   </div>
 </section>
-
+ 
 <!-- PICK OUR DAY -->
 <section class="day-section fade-up">
   <div class="section">
@@ -978,7 +978,7 @@ footer {
     <div class="day-after" id="dayAfter"></div>
   </div>
 </section>
-
+ 
 <!-- MUSIC -->
 <section class="music-section fade-up">
   <div class="section">
@@ -998,7 +998,7 @@ footer {
     </div>
   </div>
 </section>
-
+ 
 <!-- TRIVIA -->
 <section class="trivia-section fade-up">
   <div class="section">
@@ -1018,7 +1018,7 @@ footer {
     </div>
   </div>
 </section>
-
+ 
 <!-- VERDICT -->
 <section class="verdict-section fade-up">
   <div class="section">
@@ -1047,7 +1047,7 @@ footer {
     </div>
   </div>
 </section>
-
+ 
 <!-- FOOTER -->
 <footer class="fade-up">
   <div class="footer-eyebrow">07 — Let's Connect</div>
@@ -1060,12 +1060,12 @@ footer {
   </div>
   <p class="footer-fine">you found this via a little card i gave you in person. thanks for being curious. ✦</p>
 </footer>
-
+ 
 <script>
 /* ─────────────────────────────────────────────────────
    ✏️  YOUR DATA — fill these in
 ───────────────────────────────────────────────────── */
-
+ 
 // Coach's 20 paired values — left side = what you prioritize
 const ALL_VALUES = [
   ["Direct honesty",      "keeping the peace"],
@@ -1089,11 +1089,11 @@ const ALL_VALUES = [
   ["Accountability",      "excuses"],
   ["Joy",                 "cynicism"],
 ];
-
+ 
 // YOUR hidden core values — update indices (0–19) to match yours
 // These run the meter silently. Visitor never sees which ones.
 const MY_CORE = new Set([0, 1, 3, 4, 5, 6, 8, 9, 14, 18]);
-
+ 
 // PICK OUR DAY options
 const DAY_OPTIONS = [
   { letter:"A", emoji:"🏃‍♀️", text:"Morning run + smoothie or coffee after" },
@@ -1105,7 +1105,7 @@ const DAY_OPTIONS = [
 ];
 // Your hidden preferred day(s) — set the letter(s) you'd pick
 const MY_DAY_PICKS = new Set(["A", "B", "C", "D", "E", "F" ]);
-
+ 
 // Day callout remarks — what shows in the verdict
 const DAY_REMARKS = {
   A: { match: true,  text: "Run club then cool down? Let's do it!" },
@@ -1115,12 +1115,12 @@ const DAY_REMARKS = {
   E: { match: true,  text: "A night in — cooking, music, no agenda. That's genuinely one of mine too." },
   F: { match: false, text: "Something new and unplanned. Bold. I respect the openness." },
 };
-
+ 
 // TRACKS — your top 7 songs
 // myRxn: the emoji you'd give each song (🔥 = obsessed, 😍 = love it)
 const TRACKS = [
   { name:"[Literally anything]", artist:"Olivia Dean", myRxn:"🔥" },
-  { name:"Dream & Nightmares]", artist:"Meek Mill", myRxn:"🔥" },
+  { name:"Dreams & Nightmares", artist:"Meek Mill", myRxn:"🔥" },
   { name:"crooked the road", artist:"Mon Rovîa", myRxn:"😍" },
   { name:"[Song Title 4]", artist:"[Artist]", myRxn:"🔥" },
   { name:"[Song Title 5]", artist:"[Artist]", myRxn:"😍" },
@@ -1134,7 +1134,7 @@ const REACTIONS = [
   { emoji:"🤢", label:"hate it"  },
 ];
 const RXN_SCORE = { "🔥":10, "😍":7, "👎":2, "🤢":0 };
-
+ 
 // TRIVIA — 5 questions about you
 const QUESTIONS = [
   {
@@ -1145,7 +1145,7 @@ const QUESTIONS = [
   },
   {
     q: "Ideal night out?",
-    opts: ["Bar hopping, with a group of friends","Wing it!", Dinner after a show (music, movie, play, etc.)","Late night dancing at a club"],
+    opts: ["Bar hopping, with a group of friends","Wing it!","Dinner after a show (music, movie, play, etc.)","Late night dancing at a club"],
     correct: 2,
     feedback: "Watching something fun and then taking the time to chat about it is",
   },
@@ -1168,7 +1168,7 @@ const QUESTIONS = [
     feedback: "[Your reasoning here.]",
   },
 ];
-
+ 
 // VERDICT TIERS
 const VERDICTS = [
   { min:0,  max:25,  eyebrow:"The results are in —",    verdict:"Intriguing <em>contrast.</em>",        remark:"Opposites can make for the most interesting conversations. Low overlap, high potential. I'd still meet you for coffee." },
@@ -1177,7 +1177,7 @@ const VERDICTS = [
   { min:75, max:89,  eyebrow:"Okay, not going to lie —",verdict:"Suspiciously <em>compatible.</em>",     remark:"Either you're exactly my kind of person, or you've done a lot of research. Either way — curious. If you haven't reached out yet, what are you waiting for?" },
   { min:90, max:100, eyebrow:"Okay. Wow. —",            verdict:"Cosmically <em>aligned.</em>",          remark:"This is either real or one of my friends playing around. If it's the former: hi, we should talk. If it's the latter: I see you." },
 ];
-
+ 
 /* ─────────────────────────────────────────────────────
    STATE
 ───────────────────────────────────────────────────── */
@@ -1188,7 +1188,7 @@ const state = {
   triviaScore:0,triviaDone:false,
   trackRxns:{},
 };
-
+ 
 /* ─────────────────────────────────────────────────────
    GALLERY
 ───────────────────────────────────────────────────── */
@@ -1201,7 +1201,7 @@ const state = {
   let perPage = window.innerWidth <= 680 ? 1 : 3;
   let current = 0;
   let pages = Math.ceil(total / perPage);
-
+ 
   function buildDots() {
     pages = Math.ceil(total / perPage);
     dotsWrap.innerHTML = '';
@@ -1212,7 +1212,7 @@ const state = {
       dotsWrap.appendChild(d);
     }
   }
-
+ 
   function goTo(page) {
     current = Math.max(0, Math.min(page, pages - 1));
     const offset = current * perPage * (100 / total);
@@ -1221,14 +1221,14 @@ const state = {
       d.classList.toggle('active', i === current);
     });
   }
-
+ 
   document.getElementById('galleryPrev').onclick = () => goTo(current - 1);
   document.getElementById('galleryNext').onclick = () => goTo(current + 1);
-
+ 
   // set each slide width based on total
   slides.forEach(s => { s.style.minWidth = `${100 / total}%`; });
   track.style.width = `${(total / perPage) * 100}%`;
-
+ 
   // swipe support
   let startX = 0;
   track.addEventListener('touchstart', e => { startX = e.touches[0].clientX; }, {passive:true});
@@ -1236,7 +1236,7 @@ const state = {
     const dx = e.changedTouches[0].clientX - startX;
     if (Math.abs(dx) > 40) goTo(current + (dx < 0 ? 1 : -1));
   }, {passive:true});
-
+ 
   buildDots();
   window.addEventListener('resize', () => {
     const newPer = window.innerWidth <= 680 ? 1 : 3;
@@ -1248,7 +1248,7 @@ const state = {
     }
   });
 })();
-
+ 
 /* ─────────────────────────────────────────────────────
    VALUES — top 5 forced
 ───────────────────────────────────────────────────── */
@@ -1257,7 +1257,7 @@ const picked = new Set();
 const valItems = [];
 const grid = document.getElementById('valuesGrid');
 const valCountEl = document.getElementById('valCount');
-
+ 
 ALL_VALUES.forEach(([a, b], i) => {
   const item = document.createElement('div');
   item.className = 'value-item';
@@ -1281,22 +1281,22 @@ ALL_VALUES.forEach(([a, b], i) => {
   grid.appendChild(item);
   valItems.push(item);
 });
-
+ 
 function syncValues() {
   const n = picked.size;
   valCountEl.textContent = n;
   valCountEl.className   = 'val-count-num' + (n===MAX?' full':'');
-
+ 
   valItems.forEach((el, i) => {
     el.classList.toggle('locked', !picked.has(i) && n >= MAX);
   });
-
+ 
   const overlap = [...picked].filter(i => MY_CORE.has(i)).length;
   const pct = n===MAX ? Math.round((overlap/MY_CORE.size)*100) : 0;
   document.getElementById('meterFill').style.width = pct + '%';
   document.getElementById('meterNum').textContent  = overlap;
   state.valScore = pct;
-
+ 
   setStep('ibStep1', n > 0, n === MAX);
   if (!state.valDone && n === MAX) {
     state.valDone = true;
@@ -1304,13 +1304,13 @@ function syncValues() {
     tryReveal();
   }
 }
-
+ 
 /* ─────────────────────────────────────────────────────
    PICK OUR DAY
 ───────────────────────────────────────────────────── */
 const dayGrid  = document.getElementById('dayGrid');
 const dayAfter = document.getElementById('dayAfter');
-
+ 
 DAY_OPTIONS.forEach(opt => {
   const card = document.createElement('div');
   card.className = 'day-card';
@@ -1324,10 +1324,10 @@ DAY_OPTIONS.forEach(opt => {
     dayGrid.querySelectorAll('.day-card').forEach(c => c.classList.remove('selected'));
     card.classList.add('selected');
     state.dayPick = opt.letter;
-
+ 
     dayAfter.textContent = DAY_REMARKS[opt.letter]?.text || '';
     dayAfter.classList.add('show');
-
+ 
     setStep('ibStep2', true, true);
     if (!state.dayDone) {
       state.dayDone = true;
@@ -1337,22 +1337,22 @@ DAY_OPTIONS.forEach(opt => {
   });
   dayGrid.appendChild(card);
 });
-
+ 
 /* ─────────────────────────────────────────────────────
    MUSIC
 ───────────────────────────────────────────────────── */
 const trackListEl = document.getElementById('trackList');
-
+ 
 TRACKS.forEach((t, i) => {
   const row = document.createElement('div');
   row.className = 'track-row';
-
+ 
   const btns = REACTIONS.map(r => `
     <div style="display:flex;flex-direction:column;align-items:center;gap:2px;">
       <button class="rxn-btn" data-track="${i}" data-rxn="${r.emoji}" aria-label="${r.label}">${r.emoji}</button>
       <span class="rxn-label">${r.label}</span>
     </div>`).join('');
-
+ 
   row.innerHTML = `
     <div class="track-num">${String(i+1).padStart(2,'0')}</div>
     <div class="track-row-inner">
@@ -1363,7 +1363,7 @@ TRACKS.forEach((t, i) => {
       <div class="track-reactions">${btns}</div>
     </div>
   `;
-
+ 
   row.querySelectorAll('.rxn-btn').forEach(btn => {
     btn.addEventListener('click', () => {
       row.querySelectorAll('.rxn-btn').forEach(b => b.classList.remove('chosen'));
@@ -1372,10 +1372,10 @@ TRACKS.forEach((t, i) => {
       syncMusic();
     });
   });
-
+ 
   trackListEl.appendChild(row);
 });
-
+ 
 function syncMusic() {
   const reacted = Object.keys(state.trackRxns).length;
   let total = 0;
@@ -1389,7 +1389,7 @@ function syncMusic() {
   document.getElementById('sSFill').style.width    = pct + '%';
   document.getElementById('sMusicPct').textContent = pct + '%';
   state.musicScore = pct;
-
+ 
   setStep('ibStep3', reacted > 0, state.musicDone);
   if (!state.musicDone && reacted >= Math.ceil(TRACKS.length * 0.6)) {
     state.musicDone = true;
@@ -1398,12 +1398,12 @@ function syncMusic() {
     tryReveal();
   }
 }
-
+ 
 /* ─────────────────────────────────────────────────────
    TRIVIA
 ───────────────────────────────────────────────────── */
 let tIdx = 0;
-
+ 
 function buildProgress() {
   const p = document.getElementById('tProgress');
   p.innerHTML = '';
@@ -1413,7 +1413,7 @@ function buildProgress() {
     p.appendChild(d);
   });
 }
-
+ 
 function loadQ(idx) {
   if (idx >= QUESTIONS.length) { endTrivia(); return; }
   const q = QUESTIONS[idx];
@@ -1432,7 +1432,7 @@ function loadQ(idx) {
   document.getElementById('tNext').style.display = 'none';
   buildProgress();
 }
-
+ 
 function answerQ(chosen, idx) {
   const q = QUESTIONS[idx];
   const btns = document.getElementById('tOptions').querySelectorAll('.opt-btn');
@@ -1447,7 +1447,7 @@ function answerQ(chosen, idx) {
   document.getElementById('tScoreNote').textContent = `${state.triviaScore} / ${idx+1} correct`;
   setStep('ibStep4', true, false);
 }
-
+ 
 function endTrivia() {
   document.getElementById('tQuestion').textContent = "That's all five. Scroll down for your verdict. ↓";
   document.getElementById('tOptions').innerHTML = '';
@@ -1459,23 +1459,23 @@ function endTrivia() {
   markChip('chipTrivia');
   tryReveal();
 }
-
+ 
 document.getElementById('tNextBtn').addEventListener('click', () => { tIdx++; loadQ(tIdx); });
 loadQ(0);
-
+ 
 /* ─────────────────────────────────────────────────────
    VERDICT
 ───────────────────────────────────────────────────── */
 function tryReveal() {
   if (!state.valDone || !state.dayDone || !state.musicDone || !state.triviaDone) return;
-
+ 
   const overall = Math.round(
     state.valScore   * 0.35 +
     state.musicScore * 0.35 +
     (state.triviaScore / QUESTIONS.length) * 100 * 0.30
   );
   const tier = VERDICTS.find(v => overall >= v.min && overall <= v.max) || VERDICTS[0];
-
+ 
   document.getElementById('rEyebrow').textContent = tier.eyebrow;
   document.getElementById('rVerdict').innerHTML   = tier.verdict;
   document.getElementById('rRemark').textContent  = tier.remark;
@@ -1483,28 +1483,28 @@ function tryReveal() {
   document.getElementById('rMScore').textContent  = state.musicScore + '%';
   document.getElementById('rTScore').textContent  = state.triviaScore + '/' + QUESTIONS.length;
   document.getElementById('rOverall').textContent = overall + '%';
-
+ 
   // day callout
   if (state.dayPick && DAY_REMARKS[state.dayPick]) {
     const callout = document.getElementById('rDayCallout');
     callout.innerHTML = `<strong>You picked:</strong> ${DAY_OPTIONS.find(d=>d.letter===state.dayPick)?.emoji} ${DAY_OPTIONS.find(d=>d.letter===state.dayPick)?.text}<br>${DAY_REMARKS[state.dayPick].text}`;
     callout.classList.add('show');
   }
-
+ 
   document.getElementById('notReady').style.display  = 'none';
   document.getElementById('resultGate').classList.add('show');
 }
-
+ 
 function markChip(id) {
   const el = document.getElementById(id);
   el.classList.add('done');
   el.textContent = '✓ ' + el.textContent.replace(/^✓ /, '');
 }
-
+ 
 function setStep(id, active, done) {
   document.getElementById(id).className = 'ib-step' + (done ? ' done' : active ? ' active' : '');
 }
-
+ 
 /* ─────────────────────────────────────────────────────
    SCROLL ANIMATIONS
 ───────────────────────────────────────────────────── */
@@ -1515,3 +1515,4 @@ document.querySelectorAll('.fade-up').forEach(el => io.observe(el));
 </script>
 </body>
 </html>
+ 
