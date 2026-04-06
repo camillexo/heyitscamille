@@ -1198,7 +1198,7 @@ const state = {
   const slides = track.querySelectorAll('.gallery-slide');
   const total = slides.length;
   // show 3 per "page" on desktop, 1 on mobile
-  let perPage = window.innerWidth <= 680 ? 1 : 3;
+  let perPage = window.innerWidth < 600 ? 1 : 3;
   let current = 0;
   let pages = Math.ceil(total / perPage);
  
@@ -1225,10 +1225,6 @@ const state = {
   document.getElementById('galleryPrev').onclick = () => goTo(current - 1);
   document.getElementById('galleryNext').onclick = () => goTo(current + 1);
  
-  // set each slide width based on total
-  slides.forEach(s => { s.style.minWidth = `${100 / total}%`; });
-  track.style.width = `${(total / perPage) * 100}%`;
- 
   // swipe support
   let startX = 0;
   track.addEventListener('touchstart', e => { startX = e.touches[0].clientX; }, {passive:true});
@@ -1239,10 +1235,9 @@ const state = {
  
   buildDots();
   window.addEventListener('resize', () => {
-    const newPer = window.innerWidth <= 680 ? 1 : 3;
+    const newPer = window.innerWidth < 600 ? 1 : 3;
     if (newPer !== perPage) {
       perPage = newPer;
-      track.style.width = `${(total / perPage) * 100}%`;
       goTo(0);
       buildDots();
     }
@@ -1515,4 +1510,3 @@ document.querySelectorAll('.fade-up').forEach(el => io.observe(el));
 </script>
 </body>
 </html>
- 
