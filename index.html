@@ -225,6 +225,7 @@ body::before {
   text-transform: uppercase;
 }
 .gallery-placeholder .ph-icon { font-size: 2rem; opacity: 0.4; }
+.sage-divider { height: 1px; background: #8a9a5b; opacity: 0.35; margin: 0; }
 .gallery-btn {
   position: absolute;
   top: 50%; transform: translateY(-50%);
@@ -943,17 +944,18 @@ footer {
  
 <!-- INTERACTIVE BANNER -->
 <div class="interactive-banner fade-up">
-  <div class="ib-kicker">now the fun part</div>
-  <h2 class="ib-headline">not <em>"do you like me?"</em><br>more like — how do you move?</h2>
-  <p class="ib-sub">A few things to click through. Takes about 3 minutes. No performance required — I already liked you enough to send this link. ;) </p>
+  <div class="ib-kicker">now we're getting somewhere</div>
+  <h2 class="ib-headline">okay… <em>let's get into it.</em></h2>
+  <p class="ib-sub">This is where things get a little more telling.</p>
   <div class="ib-steps">
     <span class="ib-step" id="ibStep1">✦ what you're about</span>
-    <span class="ib-step" id="ibStep2">☀ pick our morning</span>
-    <span class="ib-step" id="ibStep3">♪ are we in tune?</span>
-    <span class="ib-step" id="ibStep4">? how well do you get me</span>
+    <span class="ib-step" id="ibStep2">♪ are we in tune?</span>
+    <span class="ib-step" id="ibStep3">✦ shared vibe check</span>
   </div>
 </div>
- 
+
+<div class="sage-divider"></div>
+
 <!-- VALUES -->
 <section class="stripe fade-up">
   <div class="section">
@@ -970,20 +972,10 @@ footer {
   </div>
 </section>
  
-<!-- PICK OUR MORNING -->
-<section class="day-section fade-up">
-  <div class="section">
-    <div class="section-label">03 — Pick Our Morning</div>
-    <p class="day-intro">Six kinds of days. Pick the one you'd most genuinely enjoy — not the most impressive answer, just the most honest one.</p>
-    <div class="day-grid" id="dayGrid"></div>
-    <div class="day-after" id="dayAfter"></div>
-  </div>
-</section>
- 
 <!-- MUSIC -->
 <section class="music-section fade-up">
   <div class="section">
-    <div class="section-label">04 — Musical Alignment</div>
+    <div class="section-label">03 — Musical Alignment</div>
     <h2 class="music-headline">Are we <em>in tune?</em></h2>
     <p class="music-sub">I like all of these. How you feel about them says something.<br>Full playlist → <a href="https://open.spotify.com/playlist/5KGrcos65TqpWEm5WlQg7M?si=490a95e893e441be" target="_blank" rel="noopener">open on Spotify ↗</a></p>
     <div class="music-layout">
@@ -1003,8 +995,8 @@ footer {
 <!-- TRIVIA -->
 <section class="trivia-section fade-up">
   <div class="section">
-    <div class="section-label">05 — Can We Share A Vibe?</div>
-    <p class="trivia-intro">No wrong answers… but some are better than others.</p>
+    <div class="section-label">04 — Shared Vibe</div>
+    <p class="trivia-intro">Six things. Some are preference — a couple are a tiny bit of a test. Just be honest.</p>
     <div class="trivia-progress" id="tProgress"></div>
     <div class="trivia-card" id="tCard" data-num="1">
       <div>
@@ -1023,21 +1015,19 @@ footer {
 <!-- VERDICT -->
 <section class="verdict-section fade-up">
   <div class="section">
-    <div class="section-label">06 — The Verdict</div>
+    <div class="section-label">05 — The Verdict</div>
     <div class="not-ready" id="notReady">
       <p class="nr-text">Complete the sections above to unlock</p>
       <div class="chips">
         <span class="chip" id="chipVal">What you're about</span>
-        <span class="chip" id="chipDay">Pick our morning</span>
         <span class="chip" id="chipMusic">Music</span>
-        <span class="chip" id="chipTrivia">Trivia</span>
+        <span class="chip" id="chipTrivia">Shared vibe</span>
       </div>
     </div>
     <div class="result-gate" id="resultGate">
       <div class="r-eyebrow" id="rEyebrow"></div>
       <div class="r-verdict" id="rVerdict"></div>
       <div class="r-remark" id="rRemark"></div>
-      <div class="r-day-callout" id="rDayCallout"></div>
       <div class="r-scores">
         <div class="rs-item"><div class="rs-num" id="rVScore">—</div><div class="rs-label">Values</div></div>
         <div class="rs-item"><div class="rs-num" id="rMScore">—</div><div class="rs-label">Music</div></div>
@@ -1051,7 +1041,7 @@ footer {
  
 <!-- FOOTER -->
 <footer class="fade-up">
-  <div class="footer-eyebrow">07 — Let's Connect</div>
+  <div class="footer-eyebrow">06 — Let's Connect</div>
   <h2 class="footer-headline">Still here?<br>Say <em>hello.</em></h2>
   <p class="footer-sub">If you made it this far, we probably have something to talk about.</p>
   <div class="footer-links">
@@ -1059,7 +1049,7 @@ footer {
     <a href="https://instagram.com/yourhandle" class="footer-link">📷 Instagram</a>
     <a href="YOUR_SPOTIFY_URL" class="footer-link">🎵 Playlist</a>
   </div>
-  <p class="footer-fine">you found this via a little card i gave you in person. thanks for being curious. ✦</p>
+  <p class="footer-fine">thanks for scrolling this far. that says something. ✦</p>
 </footer>
  
 <script>
@@ -1136,37 +1126,73 @@ const REACTIONS = [
 ];
 const RXN_SCORE = { "🔥":10, "😍":7, "👎":2, "🤢":0 };
  
-// TRIVIA — 5 questions about you
+// SHARED VIBE — 6 questions
 const QUESTIONS = [
   {
-    q: "Pick a show!",
-    opts: ["Thoughtful, slightly dark, makes you think (Succession, The Bear, Severance)","Feel-good, warm ensemble (Abbott Elementary, Ted Lasso)","Reality TV","Sitcom reruns"],
+    q: "What are we watching?",
+    opts: [
+      "Thoughtful and a little dark — Black Mirror, Succession, Grey's Anatomy",
+      "Comedy chaos — Always Sunny, 21 Jump Street, no effort required",
+      "Reality TV — I'm not ashamed",
+      "Documentary deep dives only"
+    ],
     correct: 0,
-    feedback: "[Add your real answer here. The context behind it makes it more interesting to read.]",
+    feedback: "Black Mirror. Grey's. Anything that gives me something to say after. Silly comedies have their place — but they're not staying the night.",
   },
   {
-    q: "Ideal night out?",
-    opts: ["Bar hopping, with a group of friends","Wing it!","Dinner after a show (music, movie, play, etc.)","Late night dancing at a club"],
-    correct: 2,
-    feedback: "Watching something fun and then taking the time to chat about it is",
-  },
-  {
-    q: "I geek out on —",
-    opts: ["[Option A]","[Option B]","[Option C]","[Option D]"],
+    q: "Vacation mode?",
+    opts: [
+      "Active city trip — new food, walking everywhere, getting lost",
+      "Beach resort — pool, no schedule, fully offline",
+      "Nature escape — hiking, outdoors, actually disconnecting",
+      "Wherever — I just need a flight booked"
+    ],
     correct: 0,
-    feedback: "[The story behind your actual answer.]",
+    feedback: "City trip first. Ideally with good food and a random museum detour. Though I'm not mad at a beach reset. Give me both.",
   },
   {
-    q: "I would rather spend a Saturday —",
-    opts: ["At a big house party","Gallery-hopping solo","Dinner with close friends","Long drive, good music, no real plan"],
-    correct: 3,
-    feedback: "[Your real answer and why.]",
-  },
-  {
-    q: "The trait I value most in a person is —",
-    opts: ["Ambition","Curiosity","Stability","Humor"],
+    q: "First date?",
+    opts: [
+      "Dinner — simple, no distractions",
+      "Something live first, then dinner — a show, exhibit, event",
+      "Something active — a class, a walk, low pressure",
+      "Surprise me (and make it count)"
+    ],
     correct: 1,
-    feedback: "[Your reasoning here.]",
+    feedback: "Dinner after something. Go to a show, see an exhibit — now you actually have something to talk about over food.",
+  },
+  {
+    q: "Is The Bahamas part of the United States?",
+    opts: [
+      "No — it's its own sovereign nation",
+      "Yes, it's a territory",
+      "I need to Google this",
+      "Aren't all islands technically...?"
+    ],
+    correct: 0,
+    feedback: "I was born there. Independent since 1973. Geographic competence is a non-negotiable.",
+  },
+  {
+    q: "Pick our day. (Free spot — no wrong answers.)",
+    opts: [
+      "Morning run + coffee after ☕",
+      "Dinner reservation + dessert somewhere new 🍽️",
+      "Museum or play + cocktails after 🖼️",
+      "Night in — cooking, music, nowhere to be 🏠"
+    ],
+    correct: 1,
+    feedback: "Truthfully, I'd show up for all of these. But dinner + dessert? That's where I live.",
+  },
+  {
+    q: "Phone at dinner?",
+    opts: [
+      "Down — it's just basic respect",
+      "Mostly down, unless something's actually urgent",
+      "I try to be present, sometimes slip",
+      "I'm on my phone right now reading this"
+    ],
+    correct: 0,
+    feedback: "Down. I'll notice. It's not a dealbreaker — okay, it's a little bit of a test.",
   },
 ];
  
@@ -1184,7 +1210,6 @@ const VERDICTS = [
 ───────────────────────────────────────────────────── */
 const state = {
   valScore:0,   valDone:false,
-  dayDone:false, dayPick:null,
   musicScore:0, musicDone:false,
   triviaScore:0,triviaDone:false,
   trackRxns:{},
@@ -1228,8 +1253,10 @@ const state = {
 
   // set track width and slide sizes — percentages resolve against gallery-wrap
   function setSizes() {
-    track.style.width = `${(total / perPage) * 100}%`;
-    slides.forEach(s => { s.style.flex = `0 0 ${100 / total}%`; });
+    const wrapW = track.parentElement.clientWidth;
+    const slideW = wrapW / perPage;
+    track.style.width = (slideW * total) + 'px';
+    slides.forEach(s => { s.style.width = slideW + 'px'; s.style.flexShrink = '0'; });
   }
   setSizes();
 
@@ -1246,10 +1273,11 @@ const state = {
     const newPer = window.innerWidth < 600 ? 1 : 3;
     if (newPer !== perPage) {
       perPage = newPer;
-      setSizes();
-      goTo(0);
+      current = 0;
       buildDots();
     }
+    setSizes();
+    goTo(current);
   });
 })();
  
@@ -1308,40 +1336,7 @@ function syncValues() {
     tryReveal();
   }
 }
- 
-/* ─────────────────────────────────────────────────────
-   PICK OUR DAY
-───────────────────────────────────────────────────── */
-const dayGrid  = document.getElementById('dayGrid');
-const dayAfter = document.getElementById('dayAfter');
- 
-DAY_OPTIONS.forEach(opt => {
-  const card = document.createElement('div');
-  card.className = 'day-card';
-  card.dataset.letter = opt.letter;
-  card.innerHTML = `
-    <span class="day-letter">${opt.letter}</span>
-    <span class="day-emoji">${opt.emoji}</span>
-    <span class="day-text">${opt.text}</span>
-  `;
-  card.addEventListener('click', () => {
-    dayGrid.querySelectorAll('.day-card').forEach(c => c.classList.remove('selected'));
-    card.classList.add('selected');
-    state.dayPick = opt.letter;
- 
-    dayAfter.textContent = DAY_REMARKS[opt.letter]?.text || '';
-    dayAfter.classList.add('show');
- 
-    setStep('ibStep2', true, true);
-    if (!state.dayDone) {
-      state.dayDone = true;
-      markChip('chipDay');
-      tryReveal();
-    }
-  });
-  dayGrid.appendChild(card);
-});
- 
+
 /* ─────────────────────────────────────────────────────
    MUSIC
 ───────────────────────────────────────────────────── */
@@ -1394,10 +1389,10 @@ function syncMusic() {
   document.getElementById('sMusicPct').textContent = pct + '%';
   state.musicScore = pct;
  
-  setStep('ibStep3', reacted > 0, state.musicDone);
+  setStep('ibStep2', reacted > 0, state.musicDone);
   if (!state.musicDone && reacted >= Math.ceil(TRACKS.length * 0.6)) {
     state.musicDone = true;
-    setStep('ibStep3', true, true);
+    setStep('ibStep2', true, true);
     markChip('chipMusic');
     tryReveal();
   }
@@ -1449,17 +1444,17 @@ function answerQ(chosen, idx) {
   fb.style.display = 'block';
   document.getElementById('tNext').style.display = 'flex';
   document.getElementById('tScoreNote').textContent = `${state.triviaScore} / ${idx+1} correct`;
-  setStep('ibStep4', true, false);
+  setStep('ibStep3', true, false);
 }
  
 function endTrivia() {
-  document.getElementById('tQuestion').textContent = "That's all five. Scroll down for your verdict. ↓";
+  document.getElementById('tQuestion').textContent = "That's it. Scroll down for your verdict. ↓";
   document.getElementById('tOptions').innerHTML = '';
   document.getElementById('tFeedback').style.display = 'none';
   document.getElementById('tNext').style.display = 'none';
   document.getElementById('tProgress').querySelectorAll('.tp-dot').forEach(d => { d.classList.add('done'); d.classList.remove('active'); });
   state.triviaDone = true;
-  setStep('ibStep4', true, true);
+  setStep('ibStep3', true, true);
   markChip('chipTrivia');
   tryReveal();
 }
@@ -1471,7 +1466,7 @@ loadQ(0);
    VERDICT
 ───────────────────────────────────────────────────── */
 function tryReveal() {
-  if (!state.valDone || !state.dayDone || !state.musicDone || !state.triviaDone) return;
+  if (!state.valDone || !state.musicDone || !state.triviaDone) return;
  
   const overall = Math.round(
     state.valScore   * 0.35 +
@@ -1487,14 +1482,7 @@ function tryReveal() {
   document.getElementById('rMScore').textContent  = state.musicScore + '%';
   document.getElementById('rTScore').textContent  = state.triviaScore + '/' + QUESTIONS.length;
   document.getElementById('rOverall').textContent = overall + '%';
- 
-  // day callout
-  if (state.dayPick && DAY_REMARKS[state.dayPick]) {
-    const callout = document.getElementById('rDayCallout');
-    callout.innerHTML = `<strong>You picked:</strong> ${DAY_OPTIONS.find(d=>d.letter===state.dayPick)?.emoji} ${DAY_OPTIONS.find(d=>d.letter===state.dayPick)?.text}<br>${DAY_REMARKS[state.dayPick].text}`;
-    callout.classList.add('show');
-  }
- 
+
   document.getElementById('notReady').style.display  = 'none';
   document.getElementById('resultGate').classList.add('show');
 }
