@@ -849,7 +849,7 @@ footer {
     </div>
     <div class="stat">
       <span class="stat-num">♋️</span>
-      <span class="stat-label">[sign] sun</span>
+      <span class="stat-label">Cancer sun</span>
     </div>
   </div>
   <div class="scroll-hint">↓ scroll to learn more</div>
@@ -1043,45 +1043,45 @@ const ALL_VALUES = [
   ["Stability",           "unpredictability"],
   ["Intention",           "passivity"],
   ["Accountability",      "excuses"],
-  ["Joy",                 "cynicism"],
+  ["Optimism",            "cynicism"],
 ];
  
 // YOUR hidden core values — update indices (0–19) to match yours
 // These run the meter silently. Visitor never sees which ones.
-const MY_CORE = new Set([0, 1, 3, 4, 5, 6, 8, 9, 14, 18]);
+const MY_CORE = new Set([0, 1, 3, 4, 5, 7, 14, 15, 17, 18, 19]);
  
-// PICK OUR DAY options
+// PICK OUR MORNING options
 const DAY_OPTIONS = [
-  { letter:"A", emoji:"🏃‍♀️", text:"Morning run + smoothie or coffee after" },
-  { letter:"B", emoji:"🧘‍♀️", text:"Workout  + farmers market walk" },
-  { letter:"C", emoji:"🍽️",  text:"Dinner reservation + dessert somewhere new" },
-  { letter:"D", emoji:"🖼️",  text:"Museum or play + cocktails after" },
-  { letter:"E", emoji:"🏠",  text:"Lowkey night in — cooking, music, nowhere to be" },
-  { letter:"F", emoji:"✨",  text:"Trying something new — a class, event, whatever" },
+  { letter:"A", emoji:"🏃‍♀️", text:"Early workout + smoothies" },
+  { letter:"B", emoji:"🧘‍♀️", text:"Morning walk + coffee" },
+  { letter:"C", emoji:"🍽️",  text:"Farmer's market + breakfast" },
+  { letter:"D", emoji:"🖼️",  text:"Museum + brunch" },
+  { letter:"E", emoji:"🏠",  text:"Sleep in + chill" },
+  { letter:"F", emoji:"✨",  text:"Something completely different ;)" },
 ];
 // Your hidden preferred day(s) — set the letter(s) you'd pick
 const MY_DAY_PICKS = new Set(["A", "B", "C", "D", "E", "F" ]);
  
 // Day callout remarks — what shows in the verdict
 const DAY_REMARKS = {
-  A: { match: true,  text: "Run club then cool down? Let's do it!" },
+  A: { match: true,  text: "Run club then cool down? I love it!" },
   B: { match: false, text: "Good instincts — that's a really solid Saturday start." },
   C: { match: false, text: "It's hard to go wrong with this classic move?" },
   D: { match: true,  text: "The chance to hat's actually one of my favorites." },
-  E: { match: true,  text: "A night in — cooking, music, no agenda. That's genuinely one of mine too." },
+  E: { match: false,  text: "Rest is rejuvenation, can't complain there!" },
   F: { match: false, text: "Something new and unplanned. Bold. I respect the openness." },
 };
  
 // TRACKS — your top 7 songs
 // myRxn: the emoji you'd give each song (🔥 = obsessed, 😍 = love it)
 const TRACKS = [
-  { name:"[Literally anything]", artist:"Olivia Dean", myRxn:"🔥" },
+  { name:"Man I Need", artist:"Olivia Dean", myRxn:"🔥" },
   { name:"Dreams & Nightmares", artist:"Meek Mill", myRxn:"🔥" },
   { name:"crooked the road", artist:"Mon Rovîa", myRxn:"😍" },
-  { name:"[Song Title 4]", artist:"[Artist]", myRxn:"🔥" },
-  { name:"[Song Title 5]", artist:"[Artist]", myRxn:"😍" },
-  { name:"[Song Title 6]", artist:"[Artist]", myRxn:"🔥" },
-  { name:"[Song Title 7]", artist:"[Artist]", myRxn:"😍" },
+  { name:"Sex on Fire", artist:"Kings of Leon", myRxn:"🔥" },
+  { name:"Good Days", artist:"SZA", myRxn:"😍" },
+  { name:"No Ordinary Love", artist:"Sade", myRxn:"🔥" },
+  { name:"Brown Sugar", artist:"D'Angelo", myRxn:"😍" },
 ];
 const REACTIONS = [
   { emoji:"🔥", label:"obsessed" },
@@ -1096,24 +1096,24 @@ const QUESTIONS = [
   {
     q: "What are we watching?",
     opts: [
-      "Thoughtful and a little dark — Black Mirror, Succession, Grey's Anatomy",
-      "Comedy chaos — Always Sunny, 21 Jump Street, no effort required",
-      "Reality TV — I'm not ashamed",
-      "Documentary deep dives only"
+      "Thoughtful and a little dark — Black Mirror, Grey Matter, Backrooms, etc.",
+      "All shits and giggs — Always Sunny, Stepbrothers, Bridesmaids, etc.",
+      "Let's get active — Jack Ryan, Apocalypse Now, ",
+      "Here for the drama — Scandal, Succession, "
     ],
-    correct: 0,
-    feedback: "Black Mirror. Grey's. Anything that gives me something to say after. Silly comedies have their place — but they're not staying the night.",
+    correct: 0, 2, 3,
+    feedback: "Give me a psycho-thriller, or political/crime drama any day! Anything that gives me something to say after.",
   },
   {
     q: "Vacation mode?",
     opts: [
-      "Active city trip — new food, walking everywhere, getting lost",
-      "Beach resort — pool, no schedule, fully offline",
-      "Nature escape — hiking, outdoors, actually disconnecting",
-      "Wherever — I just need a flight booked"
+      "Active city trip — new food, walking everywhere, getting lost (e.g. Madrid)",
+      "Beach resort — pool, no schedule, fully offline (e.g. ",
+      "Nature escape — road trip, hiking, outdoors, actually disconnecting (e.g. Joshua Tree)",
+      "Wherever — I just need the flight booked"
     ],
-    correct: 0,
-    feedback: "City trip first. Ideally with good food and a random museum detour. Though I'm not mad at a beach reset. Give me both.",
+    correct: 0, 1, 2, 3,
+    feedback: "My wanderlust is big and there are very few travel adventures I won't indulge in. ",
   },
   {
     q: "First date?",
@@ -1129,13 +1129,13 @@ const QUESTIONS = [
   {
     q: "Is The Bahamas part of the United States?",
     opts: [
-      "No — it's its own sovereign nation",
+      "The Bahamas? The band?"
+      "No, it's its own sovereign nation",
       "Yes, it's a territory",
-      "I need to Google this",
-      "Aren't all islands technically...?"
+      "I need to Google this...",
     ],
-    correct: 0,
-    feedback: "I was born there. Independent since 1973. Geographic competence is a non-negotiable.",
+    correct: 2,
+    feedback: "I'm from The Bahamas—born and raised—so had to see what you knew. Independent from The British since 1973. 🇧🇸",
   },
   {
     q: "Pick our day. (Free spot — no wrong answers.)",
