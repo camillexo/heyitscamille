@@ -880,27 +880,27 @@ footer {
  <div class="about-grid">
     <div class="about-card wide">
       <div class="card-prompt">The short version</div>
-      <p class="card-answer body">[2–3 sentences. Paint a picture of your everyday life — what you do, what lights you up, what someone would notice about you in the first 10 minutes. Think: at a dinner party, not on LinkedIn.]</p>
+      <p class="card-answer">[2–3 sentences. Paint a picture of your everyday life — what you do, what lights you up, what someone would notice about you in the first 10 minutes. Think: at a dinner party, not on LinkedIn.]</p>
     </div>
     <div class="about-card">
       <div class="card-prompt">Don't hate me if —</div>
-      <p class="card-answer">I prefer in-person > calling > texting!</p>
+      <p class="card-answer">I'd rather see you than text you — especially in the beginning. The slow replies aren't disinterest. I'm just saving the good stuff for in person.</p>
     </div>
     <div class="about-card">
-      <div class="card-prompt">I'm weirdly competitive about —</div>
-      <p class="card-answer">almost everything, from card games to trivia!</p>
+      <div class="card-prompt">Typical Sunday</div>
+      <p class="card-answer">Church, coffee shop to prep the week, movie matinee, dinner, bubble bath, bed by 9PM!</p>
     </div>
     <div class="about-card">
-      <div class="card-prompt">A question I'll ask on date one —</div>
-      <p class="card-answer">"What does your Saturday morning look like before noon?"</p>
+      <div class="card-prompt">A green flag I notice immediately —</div>
+      <p class="card-answer">You remember small things I mentioned three conversations ago.</p>
     </div>
     <div class="about-card">
-      <div class="card-prompt">A random detail —</div>
-      <p class="card-answer">I will absolutely split dessert. Don't even ask — just order two forks.</p>
+      <div class="card-prompt">My most niche opinion —</div>
+      <p class="card-answer">Brunch is overrated. Dinner at 7:30 gets my full attention.</p>
     </div>
     <div class="about-card wide">
       <div class="card-prompt">I'll know we'll get along if —</div>
-      <p class="card-answer body">you're both grounded and fun. You plan things but you're not rigid about them. And you text back.</p>
+      <p class="card-answer">you're both grounded and fun. You plan things but you're not rigid about them. And you text back.</p>
     </div>
   </div>
 </section>
@@ -945,7 +945,6 @@ footer {
     <p class="music-sub">Can we share the aux? I like all of these. How you feel about them says something.<br>My full playlists → <a href="https://open.spotify.com/playlist/5KGrcos65TqpWEm5WlQg7M?si=490a95e893e441be" target="_blank" rel="noopener">open on Spotify ↗</a></p>
     <div class="music-layout">
       <div class="spotify-embed-wrap">
-        <iframe src="https://open.spotify.com/embed/playlist/5KGrcos65TqpWEm5WlQg7M?si=490a95e893e441be?utm_source=generator&theme=0" width="100%" height="352" frameBorder="0" allow="autoplay; clipboard-write; encrypted-media; fullscreen; picture-in-picture" loading="lazy"></iframe>
         <div class="ssb">
           <div class="ssb-label">Your music alignment</div>
           <div class="ssb-track"><div class="ssb-fill" id="sSFill"></div></div>
@@ -1063,12 +1062,12 @@ const MY_DAY_PICKS = new Set(["A", "B", "C", "D", "E", "F" ]);
  
 // Day callout remarks — what shows in the verdict
 const DAY_REMARKS = {
-  A: { match: true,  text: "Run club then cool down? I love it!" },
-  B: { match: false, text: "Good instincts — that's a really solid Saturday start." },
-  C: { match: false, text: "It's hard to go wrong with this classic move?" },
-  D: { match: true,  text: "The chance to hat's actually one of my favorites." },
-  E: { match: false,  text: "Rest is rejuvenation, can't complain there!" },
-  F: { match: false, text: "Something new and unplanned. Bold. I respect the openness." },
+  A: { match: true,  text: "Run club then cool down? I'm already there." },
+  B: { match: true,  text: "Morning walk + coffee is a love language. Good instincts." },
+  C: { match: true,  text: "Farmer's market energy? That's a whole vibe. I'm in." },
+  D: { match: true,  text: "Museum + brunch is actually one of my favorites." },
+  E: { match: true,  text: "Rest is rejuvenation — can't complain there." },
+  F: { match: true,  text: "Something unplanned. Bold. I respect the openness." },
 };
  
 // TRACKS — your top 7 songs
@@ -1086,44 +1085,44 @@ const REACTIONS = [
   { emoji:"🔥", label:"obsessed" },
   { emoji:"😍", label:"love it"  },
   { emoji:"👎", label:"not for me" },
-  { emoji:"❔", label:"don't know this one"  },
+  { emoji:"❔", label:"new to me" },
 ];
-const RXN_SCORE = { "🔥":10, "😍":7, "👎":2, "❔":0 };
+const RXN_SCORE = { "🔥":10, "😍":7, "👎":2, "❔":4 };
  
-// SHARED VIBE — 6 questions
+// SHARED VIBE — 6 questions (correct is always an array of accepted indices)
 const QUESTIONS = [
   {
     q: "What are we watching?",
     opts: [
       "Thoughtful and a little dark — Black Mirror, Grey Matter, Backrooms, etc.",
       "All shits and giggs — Always Sunny, Stepbrothers, Bridesmaids, etc.",
-      "Let's get active — Jack Ryan, Apocalypse Now, ",
-      "Here for the drama — Scandal, Succession, "
+      "Let's get active — Jack Ryan, Apocalypse Now, etc.",
+      "Here for the drama — Scandal, Succession, etc."
     ],
-    correct: 0,
+    correct: [0, 3],
     feedback: "Give me a psycho-thriller, or political/crime drama any day! Anything that gives me something to say after.",
   },
   {
     q: "Vacation mode?",
     opts: [
       "Active city trip — new food, walking everywhere, getting lost (e.g. Madrid)",
-      "Beach resort — pool, no schedule, fully offline (e.g. "Puerto Vallarta)",
+      "Beach resort — pool, no schedule, fully offline (e.g. Puerto Vallarta)",
       "Nature escape — road trip, hiking, outdoors, actually disconnecting (e.g. Joshua Tree)",
       "Wherever — I just need the flight booked"
     ],
-    correct: 3,
-    feedback: "My wanderlust is big and there are very few travel adventures I won't indulge in. ",
+    correct: [0, 1, 2, 3],
+    feedback: "My wanderlust is big and there are very few travel adventures I won't indulge in.",
   },
   {
-    q: "First date?",
+    q: "What's your food love language?",
     opts: [
-      "Dinner — simple, no distractions",
-      "Something live first, then dinner — a show, exhibit, event",
-      "Something active — a class, a walk, low pressure",
-      "Surprise me (and make it count)"
+      "I want to find the spot no one knows about yet",
+      "Cooking together — the grocery run is part of the date",
+      "I eat to live. Just pick a place.",
+      "Tasting menu. I want the full experience."
     ],
-    correct: 1,
-    feedback: "Dinner after something. Go to a show, see an exhibit — now you actually have something to talk about over food.",
+    correct: [0, 1, 3],
+    feedback: "There's a right answer and 'I eat to live' isn't it. Food is an event in my world.",
   },
   {
     q: "Is The Bahamas part of the United States?",
@@ -1131,32 +1130,32 @@ const QUESTIONS = [
       "The Bahamas? The band?",
       "No, it's its own sovereign nation",
       "Yes, it's a territory",
-      "I need to Google this...",
+      "I need to Google this..."
     ],
-    correct: 2,
-    feedback: "I'm from The Bahamas—born and raised—so had to see what you knew. Independent from The British since 1973. 🇧🇸",
+    correct: [1],
+    feedback: "I'm from The Bahamas — born and raised — so had to see what you knew. Independent from The British since 1973. 🇧🇸",
   },
   {
-    q: "Pick our day. (Free spot — no wrong answers.)",
+    q: "How do you actually unwind?",
     opts: [
-      "Morning run + coffee after ☕",
-      "Dinner reservation + dessert somewhere new 🍽️",
-      "Museum or play + cocktails after 🖼️",
-      "Night in — cooking, music, nowhere to be 🏠"
+      "A good show and my couch — I need zero stimulation",
+      "Something active — gym, a run, moving my body",
+      "Cooking or a creative project — I need to do something with my hands",
+      "Out somewhere — a bar, dinner, around people"
     ],
-    correct: 1,
-    feedback: "Truthfully, I'd show up for all of these. But dinner + dessert? That's where I live.",
+    correct: [0, 1, 2],
+    feedback: "I'm a recharge-at-home person most nights. But I respect the ones who move — as long as you know when to sit still too.",
   },
   {
-    q: "Phone at dinner?",
+    q: "Your friend group would describe you as —",
     opts: [
-      "Down — it's just basic respect",
-      "Mostly down, unless something's actually urgent",
-      "I try to be present, sometimes slip",
-      "I'm on my phone right now reading this"
+      "The planner. If I don't do it, it's not happening.",
+      "The funny one. I keep things light.",
+      "The listener. People tell me things they don't tell other people.",
+      "The wildcard. I'm unpredictable in the best way."
     ],
-    correct: 0,
-    feedback: "Down. I'll notice. It's not a dealbreaker — okay, it's a little bit of a test.",
+    correct: [0, 2],
+    feedback: "The planner and the listener are my people. Bonus points if you're both.",
   },
 ];
  
@@ -1164,9 +1163,9 @@ const QUESTIONS = [
 const VERDICTS = [
   { min:0,  max:25,  eyebrow:"The results are in —",    verdict:"Intriguing <em>contrast.</em>",        remark:"Opposites can make for the most interesting conversations. Low overlap, high potential. I'd still meet you for coffee." },
   { min:26, max:50,  eyebrow:"Based on your answers —", verdict:"A little <em>something.</em>",          remark:"We're not finishing each other's sentences, but we're clearly not strangers to the same world. Enough to be curious about." },
-  { min:51, max:74,  eyebrow:"The data says —",         verdict:"Solidly <em>aligned.</em>",             remark:"We'd probably disagree on some things, but we'd agree on the ones that matter. There's something here." },
-  { min:75, max:89,  eyebrow:"Okay, not going to lie —",verdict:"Suspiciously <em>compatible.</em>",     remark:"Either you're exactly my kind of person, or you've done a lot of research. Either way — curious. If you haven't reached out yet, what are you waiting for?" },
-  { min:90, max:100, eyebrow:"Okay. Wow. —",            verdict:"Cosmically <em>aligned.</em>",          remark:"This is either real or one of my friends playing around. If it's the former: hi, we should talk. If it's the latter: I see you." },
+  { min:51, max:74,  eyebrow:"The data says —",         verdict:"Solidly <em>aligned.</em>",             remark:"We'd probably disagree on some things, but we'd agree on the ones that matter. There's something here — and if you think so too, you should do something about it." },
+  { min:75, max:89,  eyebrow:"Okay, not going to lie —",verdict:"Suspiciously <em>compatible.</em>",     remark:"Either you're exactly my kind of person, or you've done your research. Either way — I'm curious. So if you haven't asked me out yet… what exactly are you waiting for?" },
+  { min:90, max:100, eyebrow:"Okay. Wow. —",            verdict:"Cosmically <em>aligned.</em>",          remark:"This is either very real or one of my friends playing around. If it's the former: hi, I think you owe me a dinner reservation. If it's the latter: I see you." },
 ];
  
 /* ─────────────────────────────────────────────────────
@@ -1224,10 +1223,12 @@ function syncValues() {
   });
  
   const overlap = [...picked].filter(i => MY_CORE.has(i)).length;
-  const pct = n===MAX ? Math.round((overlap/MY_CORE.size)*100) : 0;
-  document.getElementById('meterFill').style.width = pct + '%';
+  // Visual bar fills based on selection progress (100% at 5/5)
+  const barPct = Math.round((n / MAX) * 100);
+  document.getElementById('meterFill').style.width = barPct + '%';
   document.getElementById('meterNum').textContent  = overlap;
-  state.valScore = pct;
+  // Score for verdict is still based on value overlap
+  state.valScore = n === MAX ? Math.round((overlap / MY_CORE.size) * 100) : 0;
  
   setStep('ibStep1', n > 0, n === MAX);
   if (!state.valDone && n === MAX) {
@@ -1334,10 +1335,13 @@ function loadQ(idx) {
  
 function answerQ(chosen, idx) {
   const q = QUESTIONS[idx];
+  const accepted = Array.isArray(q.correct) ? q.correct : [q.correct];
+  const isCorrect = accepted.includes(chosen);
   const btns = document.getElementById('tOptions').querySelectorAll('.opt-btn');
   btns.forEach(b => b.disabled = true);
-  btns[q.correct].classList.add('reveal-correct');
-  if (chosen === q.correct) { btns[chosen].classList.add('correct'); state.triviaScore++; }
+  // highlight all accepted answers
+  accepted.forEach(ci => btns[ci].classList.add('reveal-correct'));
+  if (isCorrect) { btns[chosen].classList.add('correct'); state.triviaScore++; }
   else btns[chosen].classList.add('wrong');
   const fb = document.getElementById('tFeedback');
   fb.textContent = q.feedback;
