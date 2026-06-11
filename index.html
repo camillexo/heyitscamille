@@ -6,7 +6,7 @@
 <title>hey, i'm Camille ✦</title>
 <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,700;1,400;1,700&family=DM+Sans:ital,opsz,wght@0,9..40,300;0,9..40,400;0,9..40,500;1,9..40,300&family=Space+Mono:ital,wght@0,400;0,700;1,400&display=swap" rel="stylesheet">
 <style>
-   
+
 /* ═══════════════════════════════════════════
    BASE — mobile first
 ═══════════════════════════════════════════ */
@@ -22,11 +22,11 @@
   --highlight:   #769FB6;
   --touch:       44px;
 }
- 
+
 *, *::before, *::after { margin: 0; padding: 0; box-sizing: border-box; }
- 
+
 html { scroll-behavior: smooth; -webkit-text-size-adjust: 100%; }
- 
+
 body {
   background: var(--cream);
   color: var(--ink);
@@ -36,7 +36,7 @@ body {
   line-height: 1.6;
   overflow-x: hidden;
 }
- 
+
 /* noise grain */
 body::before {
   content: '';
@@ -47,7 +47,7 @@ body::before {
   z-index: 999;
   opacity: 0.5;
 }
- 
+
 /* ═══════════════════════════════════════════
    HERO
 ═══════════════════════════════════════════ */
@@ -129,7 +129,7 @@ body::before {
   0%, 100% { transform: translateX(-50%) translateY(0); }
   50%       { transform: translateX(-50%) translateY(7px); }
 }
- 
+
 /* ═══════════════════════════════════════════
    TICKER
 ═══════════════════════════════════════════ */
@@ -155,7 +155,7 @@ body::before {
   0%   { transform: translateX(0); }
   100% { transform: translateX(-50%); }
 }
- 
+
 /* ═══════════════════════════════════════════
    SECTION SCAFFOLD
 ═══════════════════════════════════════════ */
@@ -186,7 +186,7 @@ body::before {
   height: 1px;
   background: linear-gradient(to right, transparent, var(--blush), transparent);
 }
- 
+
 /* ═══════════════════════════════════════════
    PHOTO GALLERY
 ═══════════════════════════════════════════ */
@@ -225,7 +225,7 @@ body::before {
 }
 .gallery-placeholder .ph-icon { font-size: 2rem; opacity: 0.4; }
 .sage-divider { height: 1px; background: #8a9a5b; opacity: 0.35; margin: 0; }
- 
+
 /* ═══════════════════════════════════════════
    ABOUT CARDS
 ═══════════════════════════════════════════ */
@@ -261,7 +261,7 @@ body::before {
   font-weight: 300;
   line-height: 1.75;
 }
- 
+
 /* ═══════════════════════════════════════════
    INTERACTIVE BANNER
 ═══════════════════════════════════════════ */
@@ -331,9 +331,9 @@ body::before {
 }
 .ib-step.active { color: var(--highlight); border-color: #664d00; background: #2a2200; }
 .ib-step.done   { color: var(--sage);      border-color: #2d5230; background: #0f1f11; }
- 
+
 /* ═══════════════════════════════════════════
-   DARK STRIPE (values / verdict)
+   DARK STRIPE (verdict only now)
 ═══════════════════════════════════════════ */
 .stripe {
   background: var(--ink);
@@ -341,13 +341,20 @@ body::before {
 }
 .stripe .section-label { color: var(--blush); }
 .stripe .section-label::after { background: #2A2A2A; }
- 
+
 /* ═══════════════════════════════════════════
-   VALUES
+   VALUES — now on cream background
 ═══════════════════════════════════════════ */
+.values-section {
+  background: var(--cream);
+  color: var(--ink);
+}
+.values-section .section-label { color: var(--terracotta); }
+.values-section .section-label::after { background: var(--blush); }
+
 .values-intro {
   font-size: 0.96rem;
-  color: #999;
+  color: var(--warm-grey);
   margin-bottom: 0.75rem;
   line-height: 1.75;
 }
@@ -355,17 +362,17 @@ body::before {
   font-family: 'Space Mono', monospace;
   font-size: 0.62rem;
   letter-spacing: 0.1em;
-  color: #555;
+  color: var(--warm-grey);
   margin-bottom: 1.75rem;
   display: flex; align-items: center; gap: 0.5rem;
 }
 .val-count-num {
-  color: var(--highlight);
+  color: var(--terracotta);
   font-weight: 700;
   transition: color 0.25s;
 }
 .val-count-num.full { color: var(--sage); }
- 
+
 .values-grid {
   display: grid;
   grid-template-columns: 1fr;
@@ -377,7 +384,7 @@ body::before {
   gap: 0.85rem;
   padding: 0.9rem 1rem;
   min-height: var(--touch);
-  border: 1px solid #242424;
+  border: 1px solid #E0D4C4;
   border-radius: 10px;
   cursor: pointer;
   transition: border-color 0.18s, background 0.18s;
@@ -385,33 +392,33 @@ body::before {
   -webkit-tap-highlight-color: transparent;
 }
 .value-item:hover:not(.locked),
-.value-item:active:not(.locked) { border-color: #3d3d3d; }
-.value-item.checked  { border-color: var(--sage); background: rgba(122,158,126,0.12); }
+.value-item:active:not(.locked) { border-color: var(--blush); }
+.value-item.checked  { border-color: var(--sage); background: rgba(179,190,95,0.12); }
 .value-item.locked   { opacity: 0.28; cursor: not-allowed; pointer-events: none; }
- 
+
 .val-box {
   width: 20px; height: 20px;
   flex-shrink: 0;
-  border: 1.5px solid #3A3A3A;
+  border: 1.5px solid #C5B9AD;
   border-radius: 5px;
   display: flex; align-items: center; justify-content: center;
   font-size: 0.65rem;
-  color: white;
+  color: var(--forest);
   transition: all 0.15s;
 }
-.value-item.checked .val-box { background: var(--sage); border-color: var(--sage); }
- 
-.val-text { font-size: 0.88rem; line-height: 1.35; color: #C5C5C5; }
-.val-text strong { color: #E8E8E8; font-weight: 400; }
+.value-item.checked .val-box { background: var(--sage); border-color: var(--sage); color: #fff; }
+
+.val-text { font-size: 0.88rem; line-height: 1.35; color: var(--ink); }
+.val-text strong { color: var(--ink); font-weight: 400; }
 .val-text .val-gt  { color: var(--terracotta); margin: 0 0.3em; font-style: normal; }
-.val-text .val-b   { color: #555; font-size: 0.82rem; }
-.value-item.checked .val-text { color: #DDD; }
-.value-item.checked .val-text strong { color: #FFF; }
- 
+.val-text .val-b   { color: var(--warm-grey); font-size: 0.82rem; }
+.value-item.checked .val-text { color: var(--ink); }
+.value-item.checked .val-text strong { color: var(--forest); }
+
 .match-meter {
   margin-top: 1.75rem;
   padding: 1.1rem 1.25rem;
-  border: 1px solid #2A2A2A;
+  border: 1px solid #E0D4C4;
   border-radius: 10px;
   display: flex;
   align-items: center;
@@ -420,7 +427,7 @@ body::before {
 }
 .meter-track {
   flex: 1; min-width: 100px;
-  height: 5px; background: #2A2A2A;
+  height: 5px; background: #E0D4C4;
   border-radius: 100px; overflow: hidden;
 }
 .meter-fill {
@@ -433,18 +440,18 @@ body::before {
 .meter-label {
   font-family: 'Space Mono', monospace;
   font-size: 0.75rem;
-  color: #888;
+  color: var(--warm-grey);
   white-space: nowrap;
 }
-.meter-label span { color: var(--highlight); font-weight: 700; }
- 
+.meter-label span { color: var(--terracotta); font-weight: 700; }
+
 /* ═══════════════════════════════════════════
    PICK OUR DAY
 ═══════════════════════════════════════════ */
 .day-section { background: var(--paper); }
 .day-section .section-label { color: var(--terracotta); }
 .day-section .section-label::after { background: var(--blush); }
- 
+
 .day-intro {
   font-size: 0.95rem;
   color: var(--warm-grey);
@@ -511,14 +518,14 @@ body::before {
   display: none;
 }
 .day-after.show { display: block; }
- 
+
 /* ═══════════════════════════════════════════
    MUSIC
 ═══════════════════════════════════════════ */
 .music-section { background: #111; }
 .music-section .section-label { color: #444; }
 .music-section .section-label::after { background: #222; }
- 
+
 .music-headline {
   font-family: 'Playfair Display', serif;
   font-size: clamp(1.7rem, 6vw, 2.8rem);
@@ -541,20 +548,20 @@ body::before {
   text-decoration: none;
   border-bottom: 1px solid #1DB95440;
 }
- 
+
 /* embed always on top on mobile, tracks below */
 .spotify-embed-wrap {
   margin-bottom: 1.5rem;
 }
 .spotify-embed-wrap iframe { border-radius: 12px; width: 100%; }
- 
+
 .ssb { margin-top: 1.25rem; padding: 1.1rem 1.15rem; border: 1px solid #222; border-radius: 10px; }
 .ssb-label { font-family: 'Space Mono', monospace; font-size: 0.6rem; letter-spacing: 0.12em; text-transform: uppercase; color: #444; margin-bottom: 0.75rem; }
 .ssb-track { height: 3px; background: #1A1A1A; border-radius: 100px; position: relative; overflow: hidden; }
 .ssb-fill { position: absolute; left:0; top:0; height:100%; background: linear-gradient(to right, #1DB954, var(--highlight)); border-radius: 100px; width:0%; transition: width 0.5s cubic-bezier(0.34,1.56,0.64,1); }
 .ssb-nums { display: flex; justify-content: space-between; margin-top: 0.55rem; font-family: 'Space Mono', monospace; font-size: 0.58rem; color: #3A3A3A; }
 .ssb-nums strong { color: #1DB954; font-weight: 400; }
- 
+
 .track-row {
   display: grid;
   grid-template-columns: 26px 1fr;
@@ -591,14 +598,14 @@ body::before {
   letter-spacing: 0.04em;
   text-transform: uppercase;
 }
- 
+
 /* ═══════════════════════════════════════════
    TRIVIA
 ═══════════════════════════════════════════ */
 .trivia-section { background: var(--cream); }
 .trivia-section .section-label { color: var(--terracotta); }
 .trivia-section .section-label::after { background: var(--blush); }
- 
+
 .trivia-intro {
   font-size: 0.95rem;
   color: var(--warm-grey);
@@ -609,7 +616,7 @@ body::before {
 .tp-dot { height: 3px; flex: 1; background: #DDD; border-radius: 2px; transition: background 0.3s; }
 .tp-dot.done   { background: var(--terracotta); }
 .tp-dot.active { background: var(--ink); }
- 
+
 .trivia-card {
   border: 1px solid #E8DDD0;
   background: var(--paper);
@@ -655,7 +662,7 @@ body::before {
 .opt-btn.correct        { background: #DCE8D8; border-color: var(--sage); color: var(--forest); }
 .opt-btn.wrong          { background: #FDECEA; border-color: #D96B5B; color: #7A1F12; }
 .opt-btn.reveal-correct { background: #DCE8D8; border-color: var(--sage); color: var(--forest); }
- 
+
 .trivia-feedback {
   margin-top: 1.25rem;
   padding: 0.9rem 1rem;
@@ -683,14 +690,14 @@ body::before {
 }
 .next-btn:hover, .next-btn:active { background: transparent; color: var(--ink); }
 .t-score-note { font-family: 'Space Mono', monospace; font-size: 0.62rem; color: var(--warm-grey); }
- 
+
 /* ═══════════════════════════════════════════
    VERDICT
 ═══════════════════════════════════════════ */
 .verdict-section { background: var(--ink); color: var(--cream); }
 .verdict-section .section-label { color: var(--blush); }
 .verdict-section .section-label::after { background: #2A2A2A; }
- 
+
 .not-ready { padding: 2rem 0; }
 .nr-text { font-family: 'Space Mono', monospace; font-size: 0.65rem; color: #444; letter-spacing: 0.1em; text-transform: uppercase; margin-bottom: 1.1rem; }
 .chips { display: flex; gap: 0.6rem; flex-wrap: wrap; }
@@ -707,7 +714,7 @@ body::before {
   display: flex; align-items: center;
 }
 .chip.done { border-color: var(--sage); color: var(--sage); background: rgba(122,158,126,0.08); }
- 
+
 .result-gate { display: none; }
 .result-gate.show { display: block; }
 .r-eyebrow {
@@ -740,7 +747,7 @@ body::before {
 }
 .r-day-callout.show { display: block; }
 .r-day-callout strong { color: #DDD; font-weight: 400; }
- 
+
 .r-scores {
   display: flex; gap: 2rem;
   flex-wrap: wrap;
@@ -761,47 +768,48 @@ body::before {
 }
 .r-cta { font-size: 0.88rem; color: #555; line-height: 1.75; }
 .r-cta a { color: var(--blush); text-decoration: none; border-bottom: 1px solid #5A3A3A; }
- 
+
 /* ═══════════════════════════════════════════
-   FOOTER
+   FOOTER — sage green
 ═══════════════════════════════════════════ */
 footer {
-  background: var(--ink);
-  color: var(--cream);
+  background: var(--sage);
+  color: var(--forest);
   text-align: center;
   padding: 4rem 1.5rem;
-  border-top: 1px solid #1E1E1E;
+  border-top: 1px solid rgba(0,38,38,0.12);
 }
 .footer-eyebrow {
   font-family: 'Space Mono', monospace;
   font-size: 0.6rem; letter-spacing: 0.25em; text-transform: uppercase;
-  color: var(--blush); margin-bottom: 1.5rem;
+  color: var(--forest); opacity: 0.6; margin-bottom: 1.5rem;
 }
 .footer-headline {
   font-family: 'Playfair Display', serif;
   font-size: clamp(2rem, 8vw, 3.75rem);
+  color: var(--forest);
   line-height: 1.1; margin-bottom: 1.25rem;
 }
-.footer-headline em { font-style: italic; color: var(--blush); }
-.footer-sub { font-size: 0.92rem; color: #777; margin-bottom: 2.5rem; max-width: 360px; margin-left: auto; margin-right: auto; line-height: 1.75; }
+.footer-headline em { font-style: italic; color: var(--cream); }
+.footer-sub { font-size: 0.92rem; color: var(--forest); opacity: 0.7; margin-bottom: 2.5rem; max-width: 360px; margin-left: auto; margin-right: auto; line-height: 1.75; }
 .footer-links { display: flex; gap: 1.25rem; justify-content: center; flex-wrap: wrap; margin-bottom: 3rem; }
 .footer-link {
   font-family: 'Space Mono', monospace;
-  font-size: 0.7rem; color: var(--cream);
+  font-size: 0.7rem; color: var(--forest);
   text-decoration: none; letter-spacing: 0.08em; text-transform: uppercase;
-  border-bottom: 1px solid #333; padding-bottom: 2px;
+  border-bottom: 1px solid rgba(0,38,38,0.25); padding-bottom: 2px;
   min-height: var(--touch); display: flex; align-items: center;
   transition: color 0.2s, border-color 0.2s;
 }
-.footer-link:hover { border-color: var(--blush); color: var(--blush); }
-.footer-fine { font-size: 0.72rem; color: #3A3A3A; font-style: italic; }
- 
+.footer-link:hover { border-color: var(--forest); color: var(--ink); }
+.footer-fine { font-size: 0.72rem; color: var(--forest); opacity: 0.45; font-style: italic; }
+
 /* ═══════════════════════════════════════════
    SCROLL ANIMATION
 ═══════════════════════════════════════════ */
 .fade-up { opacity: 0; transform: translateY(22px); transition: opacity 0.65s ease, transform 0.65s ease; }
 .fade-up.visible { opacity: 1; transform: none; }
- 
+
 /* ═══════════════════════════════════════════
    TABLET +  (≥ 600px)
 ═══════════════════════════════════════════ */
@@ -815,7 +823,7 @@ footer {
   .gallery-track { grid-template-columns: repeat(3, 1fr); }
   .gallery-slide { aspect-ratio: 3/4; }
 }
- 
+
 /* ═══════════════════════════════════════════
    DESKTOP + (≥ 860px)
 ═══════════════════════════════════════════ */
@@ -828,7 +836,7 @@ footer {
 </style>
 </head>
 <body>
- 
+
 <!-- HERO -->
 <section class="hero">
   <div class="hero-tag">est. 1997 · Nassau, Bahamas</div>
@@ -854,18 +862,18 @@ footer {
   </div>
   <div class="scroll-hint">↓ scroll to learn more</div>
 </section>
- 
+
 <!-- TICKER -->
 <div class="ticker-wrap">
   <div class="ticker">
     <span>God first! 🙏🏾</span><span>just a "little" competitive 🏆</span><span>truffle those fries, ASAP! 🍟</span><span>big brain, big yapper 🗣️</span><span>early riser 🌅</span><span>witty banter 😉</span><span>lowkey homebody 🛋️</span><span>deep belly laughs😂</span><span>God first! 🙏🏾</span><span>just a "little" competitive 🏆</span><span>truffle those fries, ASAP! 🍟</span><span>big brain, big yapper 🗣️</span><span>early riser 🌅</span><span>witty banter 😉</span><span>lowkey homebody 🛋️</span><span>deep belly laughs😂</span>
   </div>
 </div>
- 
+
 <!-- ABOUT ME -->
 <section class="section fade-up">
   <div class="section-label">01 — About Me</div>
- 
+
   <div class="gallery-wrap">
     <div class="gallery-track" id="galleryTrack">
       <div class="gallery-slide"><img src="images/IMG_9732.jpg" alt="Photo 1"></div>
@@ -876,7 +884,7 @@ footer {
       <div class="gallery-slide"><img src="images/fourseasons.jpeg" alt="Photo 6"></div>
     </div>
   </div>
- 
+
  <div class="about-grid">
     <div class="about-card wide">
       <div class="card-prompt">The short version</div>
@@ -904,9 +912,9 @@ footer {
     </div>
   </div>
 </section>
- 
+
 <div class="divider"></div>
- 
+
 <!-- INTERACTIVE BANNER -->
 <div class="interactive-banner fade-up">
   <div class="ib-kicker">now we're getting somewhere</div>
@@ -918,11 +926,10 @@ footer {
     <span class="ib-step" id="ibStep3">✦ shared vibe check</span>
   </div>
 </div>
-
 <div class="sage-divider"></div>
 
-<!-- VALUES -->
-<section class="stripe fade-up">
+<!-- VALUES — light background -->
+<section class="values-section fade-up">
   <div class="section">
     <div class="section-label">02 — What You're About</div>
     <p class="values-intro">I'm curious about how well you know yourself and how you move through the world. They're all good, but pick the five that feel most authentically like you. The ones that shows up on a regular Tuesday.</p>
@@ -936,13 +943,13 @@ footer {
     </div>
   </div>
 </section>
- 
+
 <!-- MUSIC -->
 <section class="music-section fade-up">
   <div class="section">
     <div class="section-label">03 — Musical Alignment</div>
     <h2 class="music-headline">Are we <em>in tune?</em></h2>
-    <p class="music-sub">Can we share the aux? I like all of these. How you feel about them says something.<br>My full playlists → <a href="https://open.spotify.com/playlist/5KGrcos65TqpWEm5WlQg7M?si=490a95e893e441be" target="_blank" rel="noopener">open on Spotify ↗</a></p>
+    <p class="music-sub">These are my lanes. React to each one — it says more than you think.<br>Full playlist → <a href="https://open.spotify.com/playlist/5KGrcos65TqpWEm5WlQg7M?si=490a95e893e441be" target="_blank" rel="noopener">open on Spotify ↗</a></p>
     <div class="music-layout">
       <div class="spotify-embed-wrap">
         <div class="ssb">
@@ -955,7 +962,7 @@ footer {
     </div>
   </div>
 </section>
- 
+
 <!-- TRIVIA -->
 <section class="trivia-section fade-up">
   <div class="section">
@@ -975,7 +982,7 @@ footer {
     </div>
   </div>
 </section>
- 
+
 <!-- VERDICT -->
 <section class="verdict-section fade-up">
   <div class="section">
@@ -998,11 +1005,11 @@ footer {
         <div class="rs-item"><div class="rs-num" id="rTScore">—</div><div class="rs-label">Trivia</div></div>
         <div class="rs-item"><div class="rs-num" id="rOverall" style="color:var(--highlight)">—</div><div class="rs-label">Overall ✦</div></div>
       </div>
-      <p class="r-cta">Curious? →<a href="https://www.instagram.com/camilleminns">@camilleminns</a></p>
+      <p class="r-cta" id="rCta">Curious? → <a href="https://www.instagram.com/camilleminns">@camilleminns</a></p>
     </div>
   </div>
 </section>
- 
+
 <!-- FOOTER -->
 <footer class="fade-up">
   <div class="footer-eyebrow">06 — Let's Connect</div>
@@ -1014,12 +1021,12 @@ footer {
   </div>
   <p class="footer-fine">thanks for scrolling this far. that says something. ✦</p>
 </footer>
- 
+
 <script>
 /* ─────────────────────────────────────────────────────
    ✏️  YOUR DATA — fill these in
 ───────────────────────────────────────────────────── */
- 
+
 // Coach's 20 paired values — left side = what you prioritize
 const ALL_VALUES = [
   ["Direct honesty",      "keeping the peace"],
@@ -1043,11 +1050,11 @@ const ALL_VALUES = [
   ["Accountability",      "excuses"],
   ["Optimism",            "cynicism"],
 ];
- 
+
 // YOUR hidden core values — update indices (0–19) to match yours
 // These run the meter silently. Visitor never sees which ones.
 const MY_CORE = new Set([0, 1, 3, 4, 5, 7, 14, 15, 17, 18, 19]);
- 
+
 // PICK OUR MORNING options
 const DAY_OPTIONS = [
   { letter:"A", emoji:"🏃‍♀️", text:"Early workout + smoothies" },
@@ -1059,7 +1066,7 @@ const DAY_OPTIONS = [
 ];
 // Your hidden preferred day(s) — set the letter(s) you'd pick
 const MY_DAY_PICKS = new Set(["A", "B", "C", "D", "E", "F" ]);
- 
+
 // Day callout remarks — what shows in the verdict
 const DAY_REMARKS = {
   A: { match: true,  text: "Run club then cool down? I'm already there." },
@@ -1069,17 +1076,17 @@ const DAY_REMARKS = {
   E: { match: true,  text: "Rest is rejuvenation — can't complain there." },
   F: { match: true,  text: "Something unplanned. Bold. I respect the openness." },
 };
- 
-// TRACKS — your top 7 songs
-// myRxn: the emoji you'd give each song (🔥 = obsessed, 😍 = love it)
+
+// TRACKS — genre lanes with representative artists
+// myRxn: your vibe for this lane (🔥 = obsessed, 😍 = love it)
 const TRACKS = [
-  { name:"Man I Need", artist:"Olivia Dean", myRxn:"🔥" },
-  { name:"Dreams & Nightmares", artist:"Meek Mill", myRxn:"🔥" },
-  { name:"crooked the road", artist:"Mon Rovîa", myRxn:"😍" },
-  { name:"Sex on Fire", artist:"Kings of Leon", myRxn:"🔥" },
-  { name:"Good Days", artist:"SZA", myRxn:"😍" },
-  { name:"No Ordinary Love", artist:"Sade", myRxn:"🔥" },
-  { name:"New Things", artist:"Isaac Manfield", myRxn:"😍" },
+  { name:"Neo-Soul & Classics", artist:"Sade, D'Angelo, Ms. Lauryn Hill, Jill Scott, Cleo Sol", myRxn:"🔥" },
+  { name:"British Soul & Alternative", artist:"Olivia Dean, RAYE, SIENNA SPIRO, Amy Winehouse, Yebba", myRxn:"🔥" },
+  { name:"Modern R&B", artist:"GIVĒON, SZA, 6LACK, Snoh Aalegra, Leon Thomas", myRxn:"🔥" },
+  { name:"Rap & Hip-Hop", artist:"Doechii, Megan Thee Stallion, Meek Mill, Ice Spice, Cardi B", myRxn:"😍" },
+  { name:"Pop & Afrobeats", artist:"Beyoncé, Doja Cat, Tems, Asake, Justin Bieber", myRxn:"😍" },
+  { name:"Rock & Indie Folk", artist:"Kings of Leon, Hozier, Mt. Joy, Noah Kahan, Fleetwood Mac", myRxn:"😍" },
+  { name:"Soulful & Electronic", artist:"RÜFÜS DU SOL, Anderson .Paak, SAULT, kwn, Mon Rovìa", myRxn:"😍" },
 ];
 const REACTIONS = [
   { emoji:"🔥", label:"obsessed" },
@@ -1087,8 +1094,8 @@ const REACTIONS = [
   { emoji:"👎", label:"not for me" },
   { emoji:"❔", label:"new to me" },
 ];
-const RXN_SCORE = { "🔥":10, "😍":7, "👎":2, "❔":4 };
- 
+const RXN_SCORE = { "🔥":10, "😍":7, "👎":2, "❔":5 };
+
 // SHARED VIBE — 6 questions (correct is always an array of accepted indices)
 const QUESTIONS = [
   {
@@ -1158,16 +1165,19 @@ const QUESTIONS = [
     feedback: "It's all of the above, depending on the week, but the 'funny one' and 'the listener' more often!",
   },
 ];
- 
+
 // VERDICT TIERS
+// ✏️ Replace YOUR_GOOGLE_VOICE_NUMBER below with your actual number
+const MY_PHONE = "617-798-5054";
+
 const VERDICTS = [
-  { min:0,  max:25,  eyebrow:"The results are in —",    verdict:"Intriguing <em>contrast.</em>",        remark:"Opposites can make for the most interesting conversations. Low overlap, high potential. I'd still meet you for coffee." },
-  { min:26, max:50,  eyebrow:"Based on your answers —", verdict:"A little <em>something.</em>",          remark:"We're not finishing each other's sentences, but we're clearly not strangers to the same world. Enough to be curious about." },
-  { min:51, max:74,  eyebrow:"The data says —",         verdict:"Solidly <em>aligned.</em>",             remark:"We'd probably disagree on some things, but we'd agree on the ones that matter. There's something here — and if you think so too, you should do something about it." },
-  { min:75, max:89,  eyebrow:"Okay, not going to lie —",verdict:"Suspiciously <em>compatible.</em>",     remark:"Either you're exactly my kind of person, or you've done your research. Either way — I'm curious. So if you haven't asked me out yet… what exactly are you waiting for?" },
-  { min:90, max:100, eyebrow:"Okay. Wow. —",            verdict:"Cosmically <em>aligned.</em>",          remark:"This is either very real or one of my friends playing around. If it's the former: hi, I think you owe me a dinner reservation. If it's the latter: I see you." },
+  { min:0,  max:25,  eyebrow:"The results are in —",    verdict:"Intriguing <em>contrast.</em>",        remark:"Opposites can make for the most interesting conversations. Low overlap, high potential. I'd still meet you for coffee.", cta:"ig" },
+  { min:26, max:50,  eyebrow:"Based on your answers —", verdict:"A little <em>something.</em>",          remark:"We're not finishing each other's sentences, but we're clearly not strangers to the same world. Enough to be curious about.", cta:"ig" },
+  { min:51, max:74,  eyebrow:"The data says —",         verdict:"Solidly <em>aligned.</em>",             remark:"We'd probably disagree on some things, but we'd agree on the ones that matter. There's something here — and if you think so too, you should do something about it.", cta:"ig" },
+  { min:75, max:89,  eyebrow:"Okay, not going to lie —",verdict:"Suspiciously <em>compatible.</em>",     remark:"Either you're exactly my kind of person, or you've done your research. Either way — I'm curious. So if you haven't asked me out yet… what exactly are you waiting for?", cta:"phone" },
+  { min:90, max:100, eyebrow:"Okay. Wow. —",            verdict:"Cosmically <em>aligned.</em>",          remark:"This is either very real or one of my friends playing around. If it's the former: hi, I think you owe me a dinner reservation. If it's the latter: I see you.", cta:"phone" },
 ];
- 
+
 /* ─────────────────────────────────────────────────────
    STATE
 ───────────────────────────────────────────────────── */
@@ -1177,9 +1187,9 @@ const state = {
   triviaScore:0,triviaDone:false,
   trackRxns:{},
 };
- 
+
 /* Gallery is now a CSS grid — no JS needed */
- 
+
 /* ─────────────────────────────────────────────────────
    VALUES — top 5 forced
 ───────────────────────────────────────────────────── */
@@ -1188,7 +1198,7 @@ const picked = new Set();
 const valItems = [];
 const grid = document.getElementById('valuesGrid');
 const valCountEl = document.getElementById('valCount');
- 
+
 ALL_VALUES.forEach(([a, b], i) => {
   const item = document.createElement('div');
   item.className = 'value-item';
@@ -1212,16 +1222,16 @@ ALL_VALUES.forEach(([a, b], i) => {
   grid.appendChild(item);
   valItems.push(item);
 });
- 
+
 function syncValues() {
   const n = picked.size;
   valCountEl.textContent = n;
   valCountEl.className   = 'val-count-num' + (n===MAX?' full':'');
- 
+
   valItems.forEach((el, i) => {
     el.classList.toggle('locked', !picked.has(i) && n >= MAX);
   });
- 
+
   const overlap = [...picked].filter(i => MY_CORE.has(i)).length;
   // Visual bar fills based on selection progress (100% at 5/5)
   const barPct = Math.round((n / MAX) * 100);
@@ -1229,7 +1239,7 @@ function syncValues() {
   document.getElementById('meterNum').textContent  = overlap;
   // Score for verdict is still based on value overlap
   state.valScore = n === MAX ? Math.round((overlap / MY_CORE.size) * 100) : 0;
- 
+
   setStep('ibStep1', n > 0, n === MAX);
   if (!state.valDone && n === MAX) {
     state.valDone = true;
@@ -1237,22 +1247,21 @@ function syncValues() {
     tryReveal();
   }
 }
-
 /* ─────────────────────────────────────────────────────
    MUSIC
 ───────────────────────────────────────────────────── */
 const trackListEl = document.getElementById('trackList');
- 
+
 TRACKS.forEach((t, i) => {
   const row = document.createElement('div');
   row.className = 'track-row';
- 
+
   const btns = REACTIONS.map(r => `
     <div style="display:flex;flex-direction:column;align-items:center;gap:2px;">
       <button class="rxn-btn" data-track="${i}" data-rxn="${r.emoji}" aria-label="${r.label}">${r.emoji}</button>
       <span class="rxn-label">${r.label}</span>
     </div>`).join('');
- 
+
   row.innerHTML = `
     <div class="track-num">${String(i+1).padStart(2,'0')}</div>
     <div class="track-row-inner">
@@ -1263,7 +1272,7 @@ TRACKS.forEach((t, i) => {
       <div class="track-reactions">${btns}</div>
     </div>
   `;
- 
+
   row.querySelectorAll('.rxn-btn').forEach(btn => {
     btn.addEventListener('click', () => {
       row.querySelectorAll('.rxn-btn').forEach(b => b.classList.remove('chosen'));
@@ -1272,10 +1281,10 @@ TRACKS.forEach((t, i) => {
       syncMusic();
     });
   });
- 
+
   trackListEl.appendChild(row);
 });
- 
+
 function syncMusic() {
   const reacted = Object.keys(state.trackRxns).length;
   let total = 0;
@@ -1289,7 +1298,7 @@ function syncMusic() {
   document.getElementById('sSFill').style.width    = pct + '%';
   document.getElementById('sMusicPct').textContent = pct + '%';
   state.musicScore = pct;
- 
+
   setStep('ibStep2', reacted > 0, state.musicDone);
   if (!state.musicDone && reacted >= Math.ceil(TRACKS.length * 0.6)) {
     state.musicDone = true;
@@ -1298,12 +1307,12 @@ function syncMusic() {
     tryReveal();
   }
 }
- 
+
 /* ─────────────────────────────────────────────────────
    TRIVIA
 ───────────────────────────────────────────────────── */
 let tIdx = 0;
- 
+
 function buildProgress() {
   const p = document.getElementById('tProgress');
   p.innerHTML = '';
@@ -1313,7 +1322,7 @@ function buildProgress() {
     p.appendChild(d);
   });
 }
- 
+
 function loadQ(idx) {
   if (idx >= QUESTIONS.length) { endTrivia(); return; }
   const q = QUESTIONS[idx];
@@ -1332,7 +1341,7 @@ function loadQ(idx) {
   document.getElementById('tNext').style.display = 'none';
   buildProgress();
 }
- 
+
 function answerQ(chosen, idx) {
   const q = QUESTIONS[idx];
   const accepted = Array.isArray(q.correct) ? q.correct : [q.correct];
@@ -1350,7 +1359,7 @@ function answerQ(chosen, idx) {
   document.getElementById('tScoreNote').textContent = `${state.triviaScore} / ${idx+1} correct`;
   setStep('ibStep3', true, false);
 }
- 
+
 function endTrivia() {
   document.getElementById('tQuestion').textContent = "That's it. Scroll down for your verdict. ↓";
   document.getElementById('tOptions').innerHTML = '';
@@ -1362,23 +1371,23 @@ function endTrivia() {
   markChip('chipTrivia');
   tryReveal();
 }
- 
+
 document.getElementById('tNextBtn').addEventListener('click', () => { tIdx++; loadQ(tIdx); });
 loadQ(0);
- 
+
 /* ─────────────────────────────────────────────────────
    VERDICT
 ───────────────────────────────────────────────────── */
 function tryReveal() {
   if (!state.valDone || !state.musicDone || !state.triviaDone) return;
- 
+
   const overall = Math.round(
     state.valScore   * 0.35 +
     state.musicScore * 0.35 +
     (state.triviaScore / QUESTIONS.length) * 100 * 0.30
   );
   const tier = VERDICTS.find(v => overall >= v.min && overall <= v.max) || VERDICTS[0];
- 
+
   document.getElementById('rEyebrow').textContent = tier.eyebrow;
   document.getElementById('rVerdict').innerHTML   = tier.verdict;
   document.getElementById('rRemark').textContent  = tier.remark;
@@ -1387,20 +1396,28 @@ function tryReveal() {
   document.getElementById('rTScore').textContent  = state.triviaScore + '/' + QUESTIONS.length;
   document.getElementById('rOverall').textContent = overall + '%';
 
+  // Dynamic CTA — phone for top two tiers, Instagram for the rest
+  const ctaEl = document.getElementById('rCta');
+  if (tier.cta === 'phone') {
+    ctaEl.innerHTML = 'Impressed? Text me → <a href="tel:' + MY_PHONE + '">' + MY_PHONE + '</a>';
+  } else {
+    ctaEl.innerHTML = 'Curious? → <a href="https://www.instagram.com/camilleminns">@camilleminns</a>';
+  }
+
   document.getElementById('notReady').style.display  = 'none';
   document.getElementById('resultGate').classList.add('show');
 }
- 
+
 function markChip(id) {
   const el = document.getElementById(id);
   el.classList.add('done');
   el.textContent = '✓ ' + el.textContent.replace(/^✓ /, '');
 }
- 
+
 function setStep(id, active, done) {
   document.getElementById(id).className = 'ib-step' + (done ? ' done' : active ? ' active' : '');
 }
- 
+
 /* ─────────────────────────────────────────────────────
    SCROLL ANIMATIONS
 ───────────────────────────────────────────────────── */
