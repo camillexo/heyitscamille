@@ -1201,9 +1201,9 @@ function tryReveal() {
   document.getElementById('rOverall').textContent = overall + '%';
   var ctaEl = document.getElementById('rCta');
   if (tier.cta === 'phone') {
-    ctaEl.innerHTML = 'Here\'s my number. You should do something worthwhile with it. → <a href="tel:' + MY_PHONE + '">' + MY_PHONE + '</a>';
+    ctaEl.innerHTML = 'Here's my number. You should do something worthwhile with it. → <a href="tel:' + MY_PHONE + '">' + MY_PHONE + '</a>';
   } else {
-    ctaEl.innerHTML = 'Curious? → <a href="https://www.instagram.com/camilleminns">@camilleminns</a>';
+    ctaEl.innerHTML = 'Well, what'd you get? Let me know';
   }
   document.getElementById('notReady').style.display  = 'none';
   document.getElementById('resultGate').classList.add('show');
